@@ -50,11 +50,14 @@ const run = async () => {
             }, 
             takeProfit: {
                 triggerPrice: currentPrice * 1.3
-            },
-
-        }
+            }
+        }; 
+        const order = exchange.createOrder(symbol, type, side, amount, limitPrice,params);
     }
     // console.log(average);
 }
+const init = setInterval(run, 86400 * 1000);
+
+init()
 
 run()
